@@ -1,0 +1,500 @@
+---
+name: Louis
+surname: Lippens
+position: Doctoral Researcher
+qualifications: MSc, MM
+address: Ghent University (FEB), Sint-Pietersplein 6, 9000 Gent, Belgium
+profilepic: llprofilesq.png
+www: louislippens.be
+email: Louis.Lippens@UGent.be
+github: lglip
+linkedin: louislippens
+researchgate: Louis-Lippens
+date: "`r format(Sys.time(), '%b %Y')`"
+headcolor: "333333"
+docname: Resume
+always_allow_html: yes
+header-includes:
+  \usepackage{float}
+  \usepackage{colortbl}
+  \arrayrulecolor[HTML]{5d5d5d}
+  \usepackage{multirow}
+output: 
+  vitae::awesomecv:
+    page_total: true
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+#https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
+#https://github.com/Aariq/curriculum-vitae/blob/master/CV/CV.pdf
+#https://github.com/mitchelloharawild/CV/blob/master/CV.pdf
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+Sys.setlocale("LC_ALL","English")
+
+library(vitae)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(scholar)
+```
+
+
+# About Me
+
+\footnotesize
+I am a joint PhD researcher in labour economics and sociology of labour at Ghent University and Vrije Universiteit Brussel with an interdisciplinary background. My present work focuses on the determinants of and contextual factors contributing to (ethnic) hiring discrimination. I have previously worked for consulting firms on data governance, data analytics, and HR projects. Besides, I have obtained a master’s degree in industrial and organisational psychology and a business degree in general management.
+\normalsize
+
+```{r}
+brief <- tribble(
+  ~what, ~when, ~with,
+  "what", "when", "with"
+)
+
+detail <- tribble(
+  ~what, ~when, ~with, ~where, ~why,
+  "what", "when", "with", "where", "why"
+)
+
+#brief %>% brief_entries(what = what, when = when, with = with)
+#detail %>% detailed_entries(what = what, when = when, with = with, where = where, why = why)
+```
+
+
+# Employment
+
+\medskip
+## Academia (Full-time)
+```{r academia}
+academia <- tribble(
+  ~position, ~period, ~organisation, ~location, ~description,
+  
+  "Doctoral Researcher", "Aug. 2019 -- Present", "Ghent University", "Ghent, BE",
+    list("Research on topics in labour economics, contributing to solving societal questions surrounding  the (Belgian) labour market",
+         "Teaching assignments, including the guidance of last-year students regarding their master's thesis and guest lectures on economic research",
+         "Development of low-threshold, interactive, and flexible tools (e.g. multicultural situational judgment tests) to increase the awareness of HR professionals' intercultural competence and to empower them to deal with the drivers of their competence",
+         "Dissertation: research on (ethnic) hiring discrimination, its determinants, its mechanisms, and the influence of the organisational context"),
+  
+  "Visiting Doctoral Researcher", "Aug. 2019 -- Present", "Vrije Universiteit Brussel", "Brussels, BE",
+  "Research on topics in sociology of labour"
+)
+
+academia %>%
+  detailed_entries(
+    what = position,
+    when = period,
+    with = organisation,
+    where = location,
+    why = description
+  )
+```
+
+\medskip
+## Private Sector (Full-time)
+```{r privatesector}
+privatesector <- tribble(
+  ~position, ~period, ~organisation, ~location, ~description,
+  
+  "Senior Consultant (Data Analytics)", "Oct. 2018 -- Jul. 2019", "BDO", "Ghent/Antwerp/Brussels, BE",
+    list("Performed survey research on the modal shift in transportation and developed a predictive model for a governmental body and an inland port",
+         "Advised a private company active in the entertainment industry on the design of a data asset repository",
+         "Constructed a financial model for a mid-scale mobility management project"),
+  
+  "Consultant (Data Governance)", "Sep. 2017 -- Sep. 2018", "Capgemini Invent", "Brussels, BE",
+    list("Performed a benchmark study of data governance operating models in financial services",
+         "Developed and optimised various data asset documentation processes in the context of BCBS239 and GDPR regulatory frameworks",
+         "Conducted a data quality maturity assessment across various business and functional departments within a major Belgian bank",
+         "Set up data-sharing agreements between various business and functional departments within a major Belgian bank")
+)
+
+privatesector %>%
+  detailed_entries(
+    what = position,
+    when = period,
+    with = organisation,
+    where = location,
+    why = description
+  )
+```
+
+\medskip
+## Internships (Full-time)
+```{r internships}
+internships <- tribble(
+  ~position, ~period, ~organisation, ~location, ~description,
+  
+  "Management Consultant", "May 2017 -- Jun. 2017", "CEMAC", "Ghent, BE",
+    list("Redesign of the firm's organisational structure and internal business processes",
+         "Analysis of the firm's product strategy and internationalisation opportunities and capabilities"),
+  
+  "HR Consultant", "Sep. 2015 -- Jan. 2016", "The Future Alliance", "Ghent, BE",
+    list("Organised assessment and development centres for middle management candidates",
+         "Organised workshops concerning HR-related topics (e.g. giving and receiving feedback)",
+         "Carried out recruitment and selection assignments for entry and (middle) management functions"),
+  
+  "HR Consultant", "Oct. 2014 -- Nov. 2014", "Hudson", "Ghent, BE",
+    list("Developed 40 rating scales, including a manual, for the advisory firm's dedicated competency model")
+)
+
+internships %>%
+  detailed_entries(
+    what = position,
+    when = period,
+    with = organisation,
+    where = location,
+    why = description
+  )
+```
+
+\newpage
+## Social Sector (Part-time)
+```{r socialsector}
+socialsector <- tribble(
+  ~position, ~period, ~organisation, ~location, ~description,
+  
+  "HR Director", "Jul. 2015 -- Jun. 2016", "180 Degrees Consulting", "Ghent, BE",
+  list("180 Degrees Consulting (180DC) is the world's largest international consultancy for non-profits and social enterprises",
+       "Led the human capital activities of 180DC's Ghent University branch",
+       "Conducted selection tests, incl. reasoning tests and structured interviews, of about 70 university students",
+       "Other activities: implementation of 180° feedback system, social media marketing, event support"),
+  
+  "Management Consultant", "Mar. 2015 -- Jun. 2015", "180 Degrees Consulting", "Ghent, BE",
+  list("Co-developed an integrated fundraising and marketing strategy for the NGO 'Join For Water'",
+       "Conducted survey research regarding the brand perceptions of Join For Water's donors and sympathizers",
+       "Developed an evidence-based, bespoke brand personality for Join For Water, as well as brand improvement guidelines")
+)
+
+socialsector %>%
+  detailed_entries(
+    what = position,
+    when = period,
+    with = organisation,
+    where = location,
+    why = description
+  )
+```
+
+
+# Education
+```{r education}
+education <- tribble(
+  ~degree, ~period, ~institution, ~location, ~description,
+
+  "PhD, Economics", "Aug. 2019 -- Present", "Ghent University", "Ghent, BE",
+    list("Doctoral courses: Econometrics, Advanced Econometrics (Non-Linear Techniques), Labour Economics, Multilevel Analysis",
+         "Other courses: Advanced Academic Writing in English, Multilevel Analysis in R, Generalised Linear Models in R, Multidisciplinary Research Tools to Study Work and the Labour Market, Effective Graphical Displays",
+         "Supervisors: Prof. Stijn Baert, Prof. Eva Derous"),
+  
+  "PhD, Sociology", "Aug. 2019 -- Present", "Vrije Universiteit Brussel", "Brussels, BE",
+    list("Supervisor: Prof. Pieter-Paul Verhaeghe",
+         "Joint PhD with Ghent University as the main institution"),
+
+  "MM, General Management (Magna Cum Laude)", "Sep. 2016 -- Jun. 2017", "Vlerick Business School", "Ghent, BE",
+    list("Key Courses: Corporate Finance, Financial Accounting, Management Accounting and Control, Strategic Management, Operations Management",
+         "Electives: Big Data and Data Analytics, Digital Strategy (w/ BNPP Fortis), Strategy and Organisational Design, Mergers and Acquisitions (w/ Gimv)",
+         "Bootcamp: Strategic Innovation in Renewable Energy (w/ Durabilis)"),
+  
+  "MSc, Industrial and Organisational Psychology (Magna Cum Laude)", "Sep. 2011 -- Jun. 2016", "Ghent University", "Ghent, BE",
+    list("Key Courses: Multi-level Organisational Research, Statistics, Applied Data Analysis, Human Resource Management, Industrial Relations",
+         "Master's thesis: Short form of the Wilde Intelligenztest: Psychometric qualities and utility of a 12-minute intelligence test for personnel selection")
+)
+
+education %>%
+  detailed_entries(
+    what = degree,
+    when = period,
+    with = institution,
+    where = location,
+    why = description
+  )
+```
+
+
+# Publications
+
+\medskip
+```{r pubs}
+profile_id <- "N5hW-KgAAAAJ"
+citations <- get_profile(profile_id)
+publications <- get_publications(profile_id, flush = TRUE, sortby = "year") %>%
+  select(title, author, journal, cites, year) %>%
+  arrange(desc(year), journal)
+```
+
+\medskip
+## Peer-reviewed Publications
+```{r pr pubs}
+publications %>%
+  filter(journal %!in% c("IZA Discussion Paper", "Ghent University")) %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-2.75}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+\newpage
+## Discussion Papers
+```{r disc pubs}
+exception <- "Is labour market discrimination against ethnic minorities better explained by taste or statistics? A systematic review of the empirical evidence"
+
+publications %>%
+  filter(journal %in% c("IZA Discussion Paper")) %>%
+  mutate(journal = "IZA Institute of Labour Economics",
+         rows = case_when(title == exception ~ 3.55,
+                          title != exception ~ 2.75)) %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+\medskip
+## Technical Reports
+```{r tech reports}
+publications %>%
+  filter(journal %in% c("Ghent University"), author != "L Lippens") %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-2.8}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+\scriptsize
+Visit my Google Scholar profile at https://bit.ly/louis-lippens-scholar for a comprehensive overview of my research.
+\normalsize
+
+
+# Services and Outreach
+
+\medskip
+## Peer Reviews
+\footnotesize
+In addition to conducting my research, I have also reviewed the work of some of my peers. I have served as a reviewer for the **Journal of Labor Economics** (1), **Work and Occupations** (1), **Social Science & Medicine** (1), **PLOS ONE** (2), **Social Forces** (1), **International Migration Review** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
+\normalsize
+
+\medskip
+## Academic Outreach
+```{r academicoutreach}
+outreach_a <- tribble(
+  ~conference, ~year, ~location, ~topic,
+  "CESSMIR PhD Meeting", "2021", "Ghent, BE",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  "EALE Annual Conference", "2021", "Barcelona, ES \\newline (online)",
+    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?",
+  "Day of Sociology", "2021", "Utrecht, NL \\newline (online)",
+    "Taste-based discrimination: Actually a matter of contact avoidance?",
+  "CESSMIR Research Day", "2021", "Ghent, BE",
+    "Taste-based discrimination: Actually a matter of contact avoidance?",
+  "Faculty of Economics and Business Administration Research Day", "2021", "Ghent, BE",
+    "Loss aversion in taste-based employee discrimination: Evidence from a choice experiment",
+  "Context Matters Symposium", "2020", "Brussels, BE",
+    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?"
+  )
+
+outreach_a %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<conference>} \\newline <topic>",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-1.9}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = glue::glue("<location>",
+                      .open = "<", .close = ">"),
+    .protect = FALSE
+  )
+```
+
+\medskip
+## Societal Outreach
+```{r societaloutreach}
+outreach_s <- tribble(
+  ~outlet, ~type, ~year, ~audience, ~topic, ~rows,
+  "LinkedIn", "Blog post", "2022", "HR professionals",
+    "The top-ranked selection tools to hire the best-performing candidate", 1.9,
+  
+  "Het Laatste Nieuws", "Newspaper article", "2021", "Belgian population",
+    "Older applicants face greater hiring discrimination than ethnic minority applicants worldwide", 1.9,
+  
+  "Trends", "Newspaper article", "2021", "Belgian population",
+    "Hiring discrimination based on age is worse than ethnic hiring discrimination", 1.9,
+  
+  "UGent @ Work", "Blog post", "2021", "Belgian population",
+    "Does discrimination have a price?", 1.9,
+  
+  "Radio 1, Nieuwe Feiten", "Radio interview", "2021", "Belgian population",
+    "Does discrimination have a price?", 1.9,
+  
+  "Apache", "Newspaper article", "2020", "Belgian population",
+    "Trainings against labour market discrimination", 1.9,
+  
+  "Het Laatste Nieuws", "Newspaper article", "2020", "Belgian population",
+    "My job disappears, my pay gets smaller, my promotion gets snubbed: This is how the Flemish people think about the future of their work", 2.9
+  )
+
+outreach_s %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<outlet>} \\newline <topic>",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = glue::glue("<type>",
+                      .open = "<", .close = ">"),
+    .protect = FALSE
+  )
+```
+
+\newpage
+# Skills
+
+\medskip
+## General Skills
+```{r general, results = 'markup'}
+general <- tribble(
+   ~Research, ~Analytics, ~Business,
+  "Audit studies -- Survey research -- Experimental research -- Applied psychometrics",
+  "Linear models -- Logit models -- Meta-analysis -- Reliability and validity analysis -- Structural equation modeling",
+  "Project management -- Human capital management -- Corporate finance -- Consultancy"
+)
+
+general %>%
+  kable(booktabs = TRUE, align = 'c', escape = FALSE, format = "latex") %>%
+  kable_styling(full_width = FALSE, font_size = 9, latex_options = "HOLD_position") %>% 
+  row_spec(0, bold = TRUE, color = "#5d5d5d") %>%
+  row_spec(1, bold = FALSE, color = "#5d5d5d") %>%
+  column_spec(column = 1:3, width = "5.2cm")
+```
+
+## Technical Skills
+```{r technical, results = 'markup'}
+technical <- tribble(
+   ~`Coding Languages`, ~`Research Software`, ~`Business Software`, ~`Creative Software`, ~Other,
+  "R (ggplot2, tidyverse, hugo, xaringan, quarto) -- SQL",
+  "RStudio -- Stata -- SPSS -- Knime",
+  "Collibra -- MS Office",
+  "Photoshop -- GIMP -- Ableton Live",
+  "Git -- Markdown -- LaTeX"
+)
+
+technical %>%
+  kable(booktabs = TRUE, align = 'c', escape = FALSE, format = "latex") %>%
+  kable_styling(full_width = FALSE, font_size = 9, latex_options = "HOLD_position") %>% 
+  row_spec(0, bold = TRUE, color = "#5d5d5d") %>%
+  row_spec(1, bold = FALSE, color = "#5d5d5d") %>%
+  column_spec(column = 1:5, width = "2.96cm")
+```
+
+## Languages
+```{r languages, results = 'markup'}
+languages <- tribble(
+  ~Skill, ~Dutch, ~English, ~French,
+  "Reading", "C2", "C2", "C1",
+  "Writing", "C2", "C2", "B2",
+  "Listening", "C2", "C2", "C1",
+  "Speaking", "C2", "C1", "B1",
+)
+
+languages %>%
+  kable(booktabs = TRUE, align = 'c', escape = FALSE, format = "latex") %>%
+  kable_styling(full_width = FALSE, font_size = 9, latex_options = "HOLD_position") %>%
+  footnote(
+    footnote_as_chunk = TRUE,
+    general_title = " ",
+    general = "\\\\tiny \\\\textcolor[HTML]{5D5D5D}{Note. CEFR: A1/A2: Basic User; B1/B2: Independent User; C1/C2: Proficient User.}",
+    escape = FALSE
+  ) %>%
+  row_spec(0, bold = TRUE, color = "#5d5d5d") %>%
+  row_spec(1:4, bold = FALSE, color = "#5d5d5d") %>%
+  column_spec(column = 1, bold = TRUE) %>%
+  column_spec(column = 1:4, width = "2cm")
+
+#credits for this code chunk: https://github.com/loreabad6/
+```
+
+# Certificates
+```{r certificates}
+certificates <- tribble(
+  ~certificate, ~year, ~institution, ~affiliation,
+  "Exploratory Data Analysis", "2019", "Coursera", "Johns Hopkins University",
+  "Reproducible Research", "2018", "Coursera", "Johns Hopkins University",
+  "R Programming", "2019", "Coursera", "Johns Hopkins University",
+  "Financial Markets", "2017", "Coursera", "Yale University",
+  "Fundamentals of Quantitative Modeling", "2017", "Coursera", "Wharton School",
+  "Collibra Community Manager", "2017", "Collibra", "",
+  "Collibra Data Steward", "2017", "Collibra", ""
+)
+
+certificates %>%
+  filter(affiliation != "") %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<certificate>} (<affiliation>)",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-.94}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = institution,
+    .protect = FALSE
+  )
+
+certificates %>%
+  filter(affiliation == "") %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<certificate>}",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-.94}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = institution,
+    .protect = FALSE
+  )
+```
+
+
+# Honors and Awards
+```{r awards}
+awards <- tribble(
+  ~award, ~year, ~institution, ~description, ~rows,
+  "Student Achievement for Outstanding Performance", "2017", "Vlerick Business School",
+    "Personal recognition for obtaining the most and highest positive peer evaluations in group assignments throughout the academic year.", 3,
+  
+  "Best European Consulting Branch", "2015", "180 Degrees Consulting",
+    "180 Degrees Consulting Ghent was named the best overall European branch (Europe) of the world's largest consultancy for non-profits and social enterprises. We were lauded for our collaboration-fostering spirit, high client focus and professional approach to private partnerships.", 4,
+  
+  "Best Event of Brugge", "2012 -- \\newline 2015", "Villa Bota",
+    "During my time as event manager of an organisation active in entertainment, we won three 'Best of Brugge'; more than 3000 people casted their online vote for the 2015 edition.", 3
+)
+
+awards %>%
+  filter(award != "Best Event of Brugge") %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<award>} \\newline <description>",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = institution,
+    .protect = FALSE
+  )
+```
+
+
+# Trivia
+
+\footnotesize
+
+**Sucker for R**
+\newline
+I am a sucker for everything related to R (ggplot2, Shiny, Xaringan…), my go-to environment for statistical computing. The content of this very resume is written in R, using R Markdown, the {{vitae}} package, and LaTeX typesetting.
+
+\footnotesize
+**Passionate about electronic music**
+\newline
+I have been playing the piano since I was 9 years old, albeit less frequently in the past few years. Moreover, between the ages of 15 and 22, I was active as a (electronic) music artist, producer, and event manager.
+
+**Fond of the sea**
+\newline
+As a teenager, I longed to spend my summer vacations at the seaside. From my 18th birthday onwards, after an intensive year of training, I was able to combine this fondness for the sea with a student job as a lifeguard at the Belgian coast.
+
+\normalsize

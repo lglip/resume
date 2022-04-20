@@ -1,0 +1,451 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{333333}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\photo{llprofilesq.png}
+\name{Louis}{Lippens}
+
+\position{Doctoral Researcher}
+\address{Ghent University (FEB), Sint-Pietersplein 6, 9000 Gent,
+Belgium}
+
+\email{\href{mailto:Louis.Lippens@UGent.be}{\nolinkurl{Louis.Lippens@UGent.be}}}
+\homepage{louislippens.be}
+\researchgate{Louis-Lippens}
+\github{lglip}
+\linkedin{louislippens}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+\usepackage{float} \usepackage{colortbl}
+
+\arrayrulecolor[HTML]{5d5d5d}
+
+\usepackage{multirow}
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {apr 2022}
+    {Louis Lippens~~~·~~~Resume}
+  {\thepage~ of \pageref{LastPage}~}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{about-me}{%
+\section{About Me}\label{about-me}}
+
+\footnotesize
+
+I am a joint PhD researcher in labour economics and sociology of labour
+at Ghent University and Vrije Universiteit Brussel with an
+interdisciplinary background. My present work focuses on the
+determinants of and contextual factors contributing to (ethnic) hiring
+discrimination. I have previously worked for consulting firms on data
+governance, data analytics, and HR projects. Besides, I have obtained a
+master's degree in industrial and organisational psychology and a
+business degree in general management. \normalsize
+
+\hypertarget{employment}{%
+\section{Employment}\label{employment}}
+
+\medskip
+
+\hypertarget{academia-full-time}{%
+\subsection{Academia (Full-time)}\label{academia-full-time}}
+
+\begin{cventries}
+    \cventry{Doctoral Researcher}{Ghent University}{Ghent, BE}{Aug. 2019 -- Present}{\begin{cvitems}
+\item Research on topics in labour economics, contributing to solving societal questions surrounding  the (Belgian) labour market
+\item Teaching assignments, including the guidance of last-year students regarding their master's thesis and guest lectures on economic research
+\item Development of low-threshold, interactive, and flexible tools (e.g. multicultural situational judgment tests) to increase the awareness of HR professionals' intercultural competence and to empower them to deal with the drivers of their competence
+\item Dissertation: research on (ethnic) hiring discrimination, its determinants, its mechanisms, and the influence of the organisational context
+\end{cvitems}}
+    \cventry{Visiting Doctoral Researcher}{Vrije Universiteit Brussel}{Brussels, BE}{Aug. 2019 -- Present}{\begin{cvitems}
+\item Research on topics in sociology of labour
+\end{cvitems}}
+\end{cventries}
+
+\medskip
+
+\hypertarget{private-sector-full-time}{%
+\subsection{Private Sector (Full-time)}\label{private-sector-full-time}}
+
+\begin{cventries}
+    \cventry{Senior Consultant (Data Analytics)}{BDO}{Ghent/Antwerp/Brussels, BE}{Oct. 2018 -- Jul. 2019}{\begin{cvitems}
+\item Performed survey research on the modal shift in transportation and developed a predictive model for a governmental body and an inland port
+\item Advised a private company active in the entertainment industry on the design of a data asset repository
+\item Constructed a financial model for a mid-scale mobility management project
+\end{cvitems}}
+    \cventry{Consultant (Data Governance)}{Capgemini Invent}{Brussels, BE}{Sep. 2017 -- Sep. 2018}{\begin{cvitems}
+\item Performed a benchmark study of data governance operating models in financial services
+\item Developed and optimised various data asset documentation processes in the context of BCBS239 and GDPR regulatory frameworks
+\item Conducted a data quality maturity assessment across various business and functional departments within a major Belgian bank
+\item Set up data-sharing agreements between various business and functional departments within a major Belgian bank
+\end{cvitems}}
+\end{cventries}
+
+\medskip
+
+\hypertarget{internships-full-time}{%
+\subsection{Internships (Full-time)}\label{internships-full-time}}
+
+\begin{cventries}
+    \cventry{Management Consultant}{CEMAC}{Ghent, BE}{May 2017 -- Jun. 2017}{\begin{cvitems}
+\item Redesign of the firm's organisational structure and internal business processes
+\item Analysis of the firm's product strategy and internationalisation opportunities and capabilities
+\end{cvitems}}
+    \cventry{HR Consultant}{The Future Alliance}{Ghent, BE}{Sep. 2015 -- Jan. 2016}{\begin{cvitems}
+\item Organised assessment and development centres for middle management candidates
+\item Organised workshops concerning HR-related topics (e.g. giving and receiving feedback)
+\item Carried out recruitment and selection assignments for entry and (middle) management functions
+\end{cvitems}}
+    \cventry{HR Consultant}{Hudson}{Ghent, BE}{Oct. 2014 -- Nov. 2014}{\begin{cvitems}
+\item Developed 40 rating scales, including a manual, for the advisory firm's dedicated competency model
+\end{cvitems}}
+\end{cventries}
+
+\newpage
+
+\hypertarget{social-sector-part-time}{%
+\subsection{Social Sector (Part-time)}\label{social-sector-part-time}}
+
+\begin{cventries}
+    \cventry{HR Director}{180 Degrees Consulting}{Ghent, BE}{Jul. 2015 -- Jun. 2016}{\begin{cvitems}
+\item 180 Degrees Consulting (180DC) is the world's largest international consultancy for non-profits and social enterprises
+\item Led the human capital activities of 180DC's Ghent University branch
+\item Conducted selection tests, incl. reasoning tests and structured interviews, of about 70 university students
+\item Other activities: implementation of 180° feedback system, social media marketing, event support
+\end{cvitems}}
+    \cventry{Management Consultant}{180 Degrees Consulting}{Ghent, BE}{Mar. 2015 -- Jun. 2015}{\begin{cvitems}
+\item Co-developed an integrated fundraising and marketing strategy for the NGO 'Join For Water'
+\item Conducted survey research regarding the brand perceptions of Join For Water's donors and sympathizers
+\item Developed an evidence-based, bespoke brand personality for Join For Water, as well as brand improvement guidelines
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{cventries}
+    \cventry{PhD, Economics}{Ghent University}{Ghent, BE}{Aug. 2019 -- Present}{\begin{cvitems}
+\item Doctoral courses: Econometrics, Advanced Econometrics (Non-Linear Techniques), Labour Economics, Multilevel Analysis
+\item Other courses: Advanced Academic Writing in English, Multilevel Analysis in R, Generalised Linear Models in R, Multidisciplinary Research Tools to Study Work and the Labour Market, Effective Graphical Displays
+\item Supervisors: Prof. Stijn Baert, Prof. Eva Derous
+\end{cvitems}}
+    \cventry{PhD, Sociology}{Vrije Universiteit Brussel}{Brussels, BE}{Aug. 2019 -- Present}{\begin{cvitems}
+\item Supervisor: Prof. Pieter-Paul Verhaeghe
+\item Joint PhD with Ghent University as the main institution
+\end{cvitems}}
+    \cventry{MM, General Management (Magna Cum Laude)}{Vlerick Business School}{Ghent, BE}{Sep. 2016 -- Jun. 2017}{\begin{cvitems}
+\item Key Courses: Corporate Finance, Financial Accounting, Management Accounting and Control, Strategic Management, Operations Management
+\item Electives: Big Data and Data Analytics, Digital Strategy (w/ BNPP Fortis), Strategy and Organisational Design, Mergers and Acquisitions (w/ Gimv)
+\item Bootcamp: Strategic Innovation in Renewable Energy (w/ Durabilis)
+\end{cvitems}}
+    \cventry{MSc, Industrial and Organisational Psychology (Magna Cum Laude)}{Ghent University}{Ghent, BE}{Sep. 2011 -- Jun. 2016}{\begin{cvitems}
+\item Key Courses: Multi-level Organisational Research, Statistics, Applied Data Analysis, Human Resource Management, Industrial Relations
+\item Master's thesis: Short form of the Wilde Intelligenztest: Psychometric qualities and utility of a 12-minute intelligence test for personnel selection
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\medskip
+
+\medskip
+
+\hypertarget{peer-reviewed-publications}{%
+\subsection{Peer-reviewed
+Publications}\label{peer-reviewed-publications}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{Applied Economics Letters} \newline Ethnic discrimination on paper: Uncovering realtors’ willingness to discriminate with mystery mails \newline A Ghekiere, L Lippens, S Baert, PP Verhaeghe}{}{\multirow{-2.75}{=}{2022}}
+    \cvhonor{}{\textbf{Journal of Ethnic and Migration Studies} \newline Is labour market discrimination against ethnic minorities better explained by taste or statistics? A systematic review of the empirical evidence \newline L Lippens, S Baert, A Ghekiere, PP Verhaeghe, E Derous}{}{\multirow{-2.75}{=}{2022}}
+    \cvhonor{}{\textbf{Economics Letters} \newline Loss aversion in taste-based employee discrimination: Evidence from a choice experiment \newline L Lippens, S Baert, E Derous}{}{\multirow{-2.75}{=}{2021}}
+    \cvhonor{}{\textbf{PLOS ONE} \newline How do employees think the COVID-19 crisis will affect their careers? \newline L Lippens, E Moens, P Sterkens, J Weytjens, S Baert}{}{\multirow{-2.75}{=}{2021}}
+    \cvhonor{}{\textbf{The European Journal of Health Economics} \newline The COVID-19 crisis and telework: A research survey on experiences, expectations and hopes \newline E Moens, L Lippens, P Sterkens, J Weytjens, S Baert}{}{\multirow{-2.75}{=}{2021}}
+\end{cvhonors}
+
+\newpage
+
+\hypertarget{discussion-papers}{%
+\subsection{Discussion Papers}\label{discussion-papers}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{IZA Institute of Labour Economics} \newline The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments \newline L Lippens, S Vermeiren, S Baert}{}{\multirow{-2.75}{=}{2021}}
+\end{cvhonors}
+
+\medskip
+
+\hypertarget{technical-reports}{%
+\subsection{Technical Reports}\label{technical-reports}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{Ghent University} \newline Discriminatie op de Gentse arbeidsmarkt anno 2021: rapportering \newline S Baert, A Dalle, L Lippens, L Malfait}{}{\multirow{-2.8}{=}{2021}}
+    \cvhonor{}{\textbf{Ghent University} \newline Nulmeting discriminatie op de Antwerpse arbeidsmarkt: rapportering \newline S Baert, A Dalle, L Lippens, L Malfait, A Sharipova}{}{\multirow{-2.8}{=}{2021}}
+\end{cvhonors}
+
+\scriptsize
+
+Visit my Google Scholar profile at
+\url{https://bit.ly/louis-lippens-scholar} for a comprehensive overview
+of my research. \normalsize
+
+\hypertarget{services-and-outreach}{%
+\section{Services and Outreach}\label{services-and-outreach}}
+
+\medskip
+
+\hypertarget{peer-reviews}{%
+\subsection{Peer Reviews}\label{peer-reviews}}
+
+\footnotesize
+
+In addition to conducting my research, I have also reviewed the work of
+some of my peers. I have served as a reviewer for the \textbf{Journal of
+Labor Economics} (1), \textbf{Work and Occupations} (1), \textbf{Social
+Science \& Medicine} (1), \textbf{PLOS ONE} (2), \textbf{Social Forces}
+(1), \textbf{International Migration Review} (1), \textbf{Oxford
+Bulletin of Economics and Statistics} (1), \textbf{International Journal
+of Manpower} (1), and \textbf{Economics Bulletin} (2). \normalsize
+
+\medskip
+
+\hypertarget{academic-outreach}{%
+\subsection{Academic Outreach}\label{academic-outreach}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{CESSMIR PhD Meeting} \newline The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments}{Ghent, BE}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{EALE Annual Conference} \newline Is labour market discrimination against ethnic minorities better explained by taste or statistics?}{Barcelona, ES \newline (online)}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Day of Sociology} \newline Taste-based discrimination: Actually a matter of contact avoidance?}{Utrecht, NL \newline (online)}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{CESSMIR Research Day} \newline Taste-based discrimination: Actually a matter of contact avoidance?}{Ghent, BE}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Faculty of Economics and Business Administration Research Day} \newline Loss aversion in taste-based employee discrimination: Evidence from a choice experiment}{Ghent, BE}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Context Matters Symposium} \newline Is labour market discrimination against ethnic minorities better explained by taste or statistics?}{Brussels, BE}{\multirow{-1.9}{=}{2020}}
+\end{cvhonors}
+
+\medskip
+
+\hypertarget{societal-outreach}{%
+\subsection{Societal Outreach}\label{societal-outreach}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{LinkedIn} \newline The top-ranked selection tools to hire the best-performing candidate}{Blog post}{\multirow{-1.9}{=}{2022}}
+    \cvhonor{}{\textbf{Het Laatste Nieuws} \newline Older applicants face greater hiring discrimination than ethnic minority applicants worldwide}{Newspaper article}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Trends} \newline Hiring discrimination based on age is worse than ethnic hiring discrimination}{Newspaper article}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{UGent @ Work} \newline Does discrimination have a price?}{Blog post}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Radio 1, Nieuwe Feiten} \newline Does discrimination have a price?}{Radio interview}{\multirow{-1.9}{=}{2021}}
+    \cvhonor{}{\textbf{Apache} \newline Trainings against labour market discrimination}{Newspaper article}{\multirow{-1.9}{=}{2020}}
+    \cvhonor{}{\textbf{Het Laatste Nieuws} \newline My job disappears, my pay gets smaller, my promotion gets snubbed: This is how the Flemish people think about the future of their work}{Newspaper article}{\multirow{-2.9}{=}{2020}}
+\end{cvhonors}
+
+\newpage
+
+\hypertarget{skills}{%
+\section{Skills}\label{skills}}
+
+\medskip
+
+\hypertarget{general-skills}{%
+\subsection{General Skills}\label{general-skills}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{9}{11}\selectfont
+
+\begin{tabular}{>{\centering\arraybackslash}p{5.2cm}>{\centering\arraybackslash}p{5.2cm}>{\centering\arraybackslash}p{5.2cm}}
+\toprule
+\textcolor[HTML]{5d5d5d}{\textbf{Research}} & \textcolor[HTML]{5d5d5d}{\textbf{Analytics}} & \textcolor[HTML]{5d5d5d}{\textbf{Business}}\\
+\midrule
+\textcolor[HTML]{5d5d5d}{Audit studies -- Survey research -- Experimental research -- Applied psychometrics} & \textcolor[HTML]{5d5d5d}{Linear models -- Logit models -- Meta-analysis -- Reliability and validity analysis -- Structural equation modeling} & \textcolor[HTML]{5d5d5d}{Project management -- Human capital management -- Corporate finance -- Consultancy}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{technical-skills}{%
+\subsection{Technical Skills}\label{technical-skills}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{9}{11}\selectfont
+
+\begin{tabular}{>{\centering\arraybackslash}p{2.96cm}>{\centering\arraybackslash}p{2.96cm}>{\centering\arraybackslash}p{2.96cm}>{\centering\arraybackslash}p{2.96cm}>{\centering\arraybackslash}p{2.96cm}}
+\toprule
+\textcolor[HTML]{5d5d5d}{\textbf{Coding Languages}} & \textcolor[HTML]{5d5d5d}{\textbf{Research Software}} & \textcolor[HTML]{5d5d5d}{\textbf{Business Software}} & \textcolor[HTML]{5d5d5d}{\textbf{Creative Software}} & \textcolor[HTML]{5d5d5d}{\textbf{Other}}\\
+\midrule
+\textcolor[HTML]{5d5d5d}{R (ggplot2, tidyverse, hugo, xaringan, quarto) -- SQL} & \textcolor[HTML]{5d5d5d}{RStudio -- Stata -- SPSS -- Knime} & \textcolor[HTML]{5d5d5d}{Collibra -- MS Office} & \textcolor[HTML]{5d5d5d}{Photoshop -- GIMP -- Ableton Live} & \textcolor[HTML]{5d5d5d}{Git -- Markdown -- LaTeX}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{languages}{%
+\subsection{Languages}\label{languages}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{9}{11}\selectfont
+
+\begin{tabular}{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\toprule
+\textcolor[HTML]{5d5d5d}{\textbf{Skill}} & \textcolor[HTML]{5d5d5d}{\textbf{Dutch}} & \textcolor[HTML]{5d5d5d}{\textbf{English}} & \textcolor[HTML]{5d5d5d}{\textbf{French}}\\
+\midrule
+\textbf{\textcolor[HTML]{5d5d5d}{Reading}} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C1}\\
+\textbf{\textcolor[HTML]{5d5d5d}{Writing}} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{B2}\\
+\textbf{\textcolor[HTML]{5d5d5d}{Listening}} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C1}\\
+\textbf{\textcolor[HTML]{5d5d5d}{Speaking}} & \textcolor[HTML]{5d5d5d}{C2} & \textcolor[HTML]{5d5d5d}{C1} & \textcolor[HTML]{5d5d5d}{B1}\\
+\bottomrule
+\multicolumn{4}{l}{\rule{0pt}{1em}\textit{ } \tiny \textcolor[HTML]{5D5D5D}{Note. CEFR: A1/A2: Basic User; B1/B2: Independent User; C1/C2: Proficient User.}}\\
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{certificates}{%
+\section{Certificates}\label{certificates}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{Exploratory Data Analysis} (Johns Hopkins University)}{Coursera}{\multirow{-.94}{=}{2019}}
+    \cvhonor{}{\textbf{Reproducible Research} (Johns Hopkins University)}{Coursera}{\multirow{-.94}{=}{2018}}
+    \cvhonor{}{\textbf{R Programming} (Johns Hopkins University)}{Coursera}{\multirow{-.94}{=}{2019}}
+    \cvhonor{}{\textbf{Financial Markets} (Yale University)}{Coursera}{\multirow{-.94}{=}{2017}}
+    \cvhonor{}{\textbf{Fundamentals of Quantitative Modeling} (Wharton School)}{Coursera}{\multirow{-.94}{=}{2017}}
+\end{cvhonors}\begin{cvhonors}
+    \cvhonor{}{\textbf{Collibra Community Manager}}{Collibra}{\multirow{-.94}{=}{2017}}
+    \cvhonor{}{\textbf{Collibra Data Steward}}{Collibra}{\multirow{-.94}{=}{2017}}
+\end{cvhonors}
+
+\hypertarget{honors-and-awards}{%
+\section{Honors and Awards}\label{honors-and-awards}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{Student Achievement for Outstanding Performance} \newline Personal recognition for obtaining the most and highest positive peer evaluations in group assignments throughout the academic year.}{Vlerick Business School}{\multirow{-3}{=}{2017}}
+    \cvhonor{}{\textbf{Best European Consulting Branch} \newline 180 Degrees Consulting Ghent was named the best overall European branch (Europe) of the world's largest consultancy for non-profits and social enterprises. We were lauded for our collaboration-fostering spirit, high client focus and professional approach to private partnerships.}{180 Degrees Consulting}{\multirow{-4}{=}{2015}}
+\end{cvhonors}
+
+\hypertarget{trivia}{%
+\section{Trivia}\label{trivia}}
+
+\footnotesize
+
+\textbf{Sucker for R} \newline I am a sucker for everything related to R
+(ggplot2, Shiny, Xaringan\ldots), my go-to environment for statistical
+computing. The content of this very resume is written in R, using R
+Markdown, the \{\{vitae\}\} package, and LaTeX typesetting.
+
+\footnotesize
+
+\textbf{Passionate about electronic music} \newline I have been playing
+the piano since I was 9 years old, albeit less frequently in the past
+few years. Moreover, between the ages of 15 and 22, I was active as a
+(electronic) music artist, producer, and event manager.
+
+\textbf{Fond of the sea} \newline As a teenager, I longed to spend my
+summer vacations at the seaside. From my 18th birthday onwards, after an
+intensive year of training, I was able to combine this fondness for the
+sea with a student job as a lifeguard at the Belgian coast.
+
+\normalsize
+
+
+\label{LastPage}~
+\end{document}
