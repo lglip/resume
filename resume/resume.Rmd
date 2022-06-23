@@ -4,7 +4,7 @@ surname: Lippens
 position: Doctoral Researcher
 qualifications: MSc, MM
 address: Ghent University (FEB), Sint-Pietersplein 6, 9000 Gent, Belgium
-profilepic: llprofilesq.png
+profilepic: llprofilesq2-bw.jpg
 www: louislippens.be
 email: Louis.Lippens@UGent.be
 github: lglip
@@ -26,10 +26,6 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-#https://github.com/loreabad6/R-CV/blob/master/CV.Rmd
-#https://github.com/Aariq/curriculum-vitae/blob/master/CV/CV.pdf
-#https://github.com/mitchelloharawild/CV/blob/master/CV.pdf
-
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
@@ -46,7 +42,7 @@ library(scholar)
 # About Me
 
 \footnotesize
-I am a joint PhD researcher in labour economics and sociology of labour at Ghent University and Vrije Universiteit Brussel with an interdisciplinary background. My present work focuses on the determinants of and contextual factors contributing to (ethnic) hiring discrimination. I have previously worked for consulting firms on data governance, data analytics, and HR projects. Besides, I have obtained a master’s degree in industrial and organisational psychology and a business degree in general management.
+I am a joint **PhD researcher** in **labour economics** and **sociology of labour** at Ghent University and Vrije Universiteit Brussel with an **interdisciplinary background** and a pronounced interest in data visualisation. My present work focuses on the determinants of and contextual factors contributing to **(ethnic) hiring discrimination**. More broadly, I research labour market topics relating to **hiring and selection** and **labour demand and supply**. I have previously worked for consulting firms on data governance, data analytics, and HR projects. I have also obtained a master’s degree in **work psychology** and a business degree in **general management**.
 \normalsize
 
 ```{r}
@@ -74,8 +70,8 @@ academia <- tribble(
   ~position, ~period, ~organisation, ~location, ~description,
   
   "Doctoral Researcher", "Aug. 2019 -- Present", "Ghent University", "Ghent, BE",
-    list("Research on topics in labour economics, contributing to solving societal questions surrounding  the (Belgian) labour market",
-         "Teaching assignments, including the guidance of last-year students regarding their master's thesis and guest lectures on economic research",
+    list("Research on topics in labour economics (90%), contributing to solving societal questions surrounding  the (Belgian) labour market",
+         "Teaching assignments (10%), including the guidance of last-year students regarding their master's thesis and guest lectures on economic research",
          "Development of low-threshold, interactive, and flexible tools (e.g. multicultural situational judgment tests) to increase the awareness of HR professionals' intercultural competence and to empower them to deal with the drivers of their competence",
          "Dissertation: research on (ethnic) hiring discrimination, its determinants, its mechanisms, and the influence of the organisational context"),
   
@@ -95,7 +91,7 @@ academia %>%
 
 \medskip
 ## Private Sector (Full-time)
-```{r privatesector}
+```{r private sector}
 privatesector <- tribble(
   ~position, ~period, ~organisation, ~location, ~description,
   
@@ -150,9 +146,9 @@ internships %>%
   )
 ```
 
-\newpage
+\medskip
 ## Social Sector (Part-time)
-```{r socialsector}
+```{r social sector}
 socialsector <- tribble(
   ~position, ~period, ~organisation, ~location, ~description,
   
@@ -177,7 +173,6 @@ socialsector %>%
     why = description
   )
 ```
-
 
 # Education
 ```{r education}
@@ -213,45 +208,13 @@ education %>%
   )
 ```
 
-
 # Publications
-
-\medskip
 ```{r pubs}
 profile_id <- "N5hW-KgAAAAJ"
 citations <- get_profile(profile_id)
 publications <- get_publications(profile_id, flush = TRUE, sortby = "year") %>%
   select(title, author, journal, cites, year) %>%
   arrange(desc(year), journal)
-```
-
-\medskip
-## Peer-reviewed Publications
-```{r pr pubs}
-publications %>%
-  filter(journal %!in% c("IZA Discussion Paper", "Ghent University")) %>%
-  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
-                                  .open = "<", .close = ">"),
-                when = glue::glue("\\multirow{-2.75}{=}{<year>}",
-                                  .open = "<", .close = ">"),
-                .protect = FALSE)
-```
-
-\newpage
-## Discussion Papers
-```{r disc pubs}
-exception <- "Is labour market discrimination against ethnic minorities better explained by taste or statistics? A systematic review of the empirical evidence"
-
-publications %>%
-  filter(journal %in% c("IZA Discussion Paper")) %>%
-  mutate(journal = "IZA Institute of Labour Economics",
-         rows = case_when(title == exception ~ 3.55,
-                          title != exception ~ 2.75)) %>%
-  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
-                                  .open = "<", .close = ">"),
-                when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
-                                  .open = "<", .close = ">"),
-                .protect = FALSE)
 ```
 
 \medskip
@@ -266,6 +229,36 @@ publications %>%
                 .protect = FALSE)
 ```
 
+\medskip
+## Discussion Papers
+```{r disc pubs}
+exception <- ""
+
+publications %>%
+  filter(journal %in% c("IZA Discussion Paper")) %>%
+  mutate(journal = "IZA Institute of Labour Economics",
+         rows = 2.75) %>%
+           #case_when(title == exception ~ 3.55, title != exception ~ 2.75)) %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+\newpage
+## Peer-reviewed Publications
+```{r pr pubs}
+publications %>%
+  filter(journal %!in% c("IZA Discussion Paper", "Ghent University")) %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-2.75}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+
 \scriptsize
 Visit my Google Scholar profile at https://bit.ly/louis-lippens-scholar for a comprehensive overview of my research.
 \normalsize
@@ -276,24 +269,86 @@ Visit my Google Scholar profile at https://bit.ly/louis-lippens-scholar for a co
 \medskip
 ## Peer Reviews
 \footnotesize
-In addition to conducting my research, I have also reviewed the work of some of my peers. I have served as a reviewer for the **Journal of Labor Economics** (1), **Work and Occupations** (1), **Social Science & Medicine** (1), **PLOS ONE** (2), **Social Forces** (1), **International Migration Review** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
+In addition to conducting my own research, I have also reviewed the work of some of my peers. I have served as a reviewer (ad hoc) for the **Journal of Labor Economics** (1), **Work and Occupations** (1), **Social Science & Medicine** (1), **Social Forces** (1), **Journal of Sociology** (1) **PLOS ONE** (2), **International Migration Review** (1), **Social Policy and Society** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
 \normalsize
 
 \medskip
+## Societal Outreach
+```{r societal outreach}
+outreach_s <- tribble(
+  ~outlet, ~type, ~year, ~audience, ~topic, ~rows,
+  "UGent @ Work", "Blog post", "2022", "Belgian population",
+    "Ethnic labour market discrimination: Generalisation or aversion?", 1.9,
+  
+  "HR Magazine", "Magazine article", "2022", "HR professionals",
+    "Structured interview best predicts a good match", 1.9,
+  
+  "UGent @ Work", "Story", "2022", "Belgian population",
+    "Inactivity among migrants in Belgium", 1.9,
+  
+  "UGent @ Work", "Story", "2022", "Belgian population",
+    "Inactivity in Europe and the Belgian Regions", 1.9,
+  
+  "LinkedIn", "Blog post", "2022", "HR professionals",
+    "The top-ranked selection tools to hire the best-performing candidate", 1.9,
+  
+  "Het Laatste Nieuws", "Newspaper article", "2021", "Belgian population",
+    "Older applicants face greater hiring discrimination than ethnic minority applicants worldwide", 1.9,
+  
+  "Trends (magazine)", "Newspaper article", "2021", "Belgian population",
+    "Hiring discrimination based on age is worse than ethnic hiring discrimination", 1.9,
+  
+  "UGent @ Work", "Blog post", "2021", "Belgian population",
+    "Does discrimination have a price?", 1.9,
+  
+  "Radio 1, Nieuwe Feiten", "Radio interview", "2021", "Belgian population",
+    "Does discrimination have a price?", 1.9,
+  
+  "Apache", "Newspaper article", "2020", "Belgian population",
+    "Trainings against labour market discrimination", 1.9,
+  
+  "Het Laatste Nieuws", "Newspaper article", "2020", "Belgian population",
+    "My job disappears, my pay gets smaller, my promotion gets snubbed: This is how the Flemish people think about their work future", 2.9
+  )
+
+outreach_s %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<outlet>} \\newline <topic>",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = glue::glue("<type>",
+                      .open = "<", .close = ">"),
+    .protect = FALSE
+  )
+```
+
+\newpage
 ## Academic Outreach
-```{r academicoutreach}
+```{r academic outreach}
 outreach_a <- tribble(
   ~conference, ~year, ~location, ~topic,
+  "IMISCOE Annual Conference", "2022", "Oslo, NO",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
+  "Spring Meeting of Young Economists", "2022", "Orléans, FR",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
   "CESSMIR PhD Meeting", "2021", "Ghent, BE",
     "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
   "EALE Annual Conference", "2021", "Barcelona, ES \\newline (online)",
     "Is labour market discrimination against ethnic minorities better explained by taste or statistics?",
+  
   "Day of Sociology", "2021", "Utrecht, NL \\newline (online)",
     "Taste-based discrimination: Actually a matter of contact avoidance?",
+  
   "CESSMIR Research Day", "2021", "Ghent, BE",
     "Taste-based discrimination: Actually a matter of contact avoidance?",
+  
   "Faculty of Economics and Business Administration Research Day", "2021", "Ghent, BE",
     "Loss aversion in taste-based employee discrimination: Evidence from a choice experiment",
+  
   "Context Matters Symposium", "2020", "Brussels, BE",
     "Is labour market discrimination against ethnic minorities better explained by taste or statistics?"
   )
@@ -310,46 +365,6 @@ outreach_a %>%
   )
 ```
 
-\medskip
-## Societal Outreach
-```{r societaloutreach}
-outreach_s <- tribble(
-  ~outlet, ~type, ~year, ~audience, ~topic, ~rows,
-  "LinkedIn", "Blog post", "2022", "HR professionals",
-    "The top-ranked selection tools to hire the best-performing candidate", 1.9,
-  
-  "Het Laatste Nieuws", "Newspaper article", "2021", "Belgian population",
-    "Older applicants face greater hiring discrimination than ethnic minority applicants worldwide", 1.9,
-  
-  "Trends", "Newspaper article", "2021", "Belgian population",
-    "Hiring discrimination based on age is worse than ethnic hiring discrimination", 1.9,
-  
-  "UGent @ Work", "Blog post", "2021", "Belgian population",
-    "Does discrimination have a price?", 1.9,
-  
-  "Radio 1, Nieuwe Feiten", "Radio interview", "2021", "Belgian population",
-    "Does discrimination have a price?", 1.9,
-  
-  "Apache", "Newspaper article", "2020", "Belgian population",
-    "Trainings against labour market discrimination", 1.9,
-  
-  "Het Laatste Nieuws", "Newspaper article", "2020", "Belgian population",
-    "My job disappears, my pay gets smaller, my promotion gets snubbed: This is how the Flemish people think about the future of their work", 2.9
-  )
-
-outreach_s %>%
-  brief_entries(
-    what = glue::glue("\\textbf{<outlet>} \\newline <topic>",
-                      .open = "<", .close = ">"),
-    when = glue::glue("\\multirow{-<rows>}{=}{<year>}",
-                      .open = "<", .close = ">"),
-    with = glue::glue("<type>",
-                      .open = "<", .close = ">"),
-    .protect = FALSE
-  )
-```
-
-\newpage
 # Skills
 
 \medskip
@@ -358,7 +373,7 @@ outreach_s %>%
 general <- tribble(
    ~Research, ~Analytics, ~Business,
   "Audit studies -- Survey research -- Experimental research -- Applied psychometrics",
-  "Linear models -- Logit models -- Meta-analysis -- Reliability and validity analysis -- Structural equation modeling",
+  "Linear models -- (Ordered) logit models -- Meta-analysis -- Meta-regression -- Reliability and validity analysis -- Structural equation modeling",
   "Project management -- Human capital management -- Corporate finance -- Consultancy"
 )
 
@@ -374,7 +389,7 @@ general %>%
 ```{r technical, results = 'markup'}
 technical <- tribble(
    ~`Coding Languages`, ~`Research Software`, ~`Business Software`, ~`Creative Software`, ~Other,
-  "R (ggplot2, tidyverse, hugo, xaringan, quarto) -- SQL",
+  "R (ggplot2, tidyverse, hugo, xaringan, quarto...) -- SQL",
   "RStudio -- Stata -- SPSS -- Knime",
   "Collibra -- MS Office",
   "Photoshop -- GIMP -- Ableton Live",
@@ -417,6 +432,7 @@ languages %>%
 ```
 
 # Certificates
+\medskip
 ```{r certificates}
 certificates <- tribble(
   ~certificate, ~year, ~institution, ~affiliation,
@@ -454,6 +470,7 @@ certificates %>%
 
 
 # Honors and Awards
+\medskip
 ```{r awards}
 awards <- tribble(
   ~award, ~year, ~institution, ~description, ~rows,
@@ -481,20 +498,20 @@ awards %>%
 
 
 # Trivia
-
+\medskip
 \footnotesize
 
 **Sucker for R**
 \newline
-I am a sucker for everything related to R (ggplot2, Shiny, Xaringan…), my go-to environment for statistical computing. The content of this very resume is written in R, using R Markdown, the {{vitae}} package, and LaTeX typesetting.
+I am a sucker for everything related to R (ggplot2, Shiny, Xaringan…), my go-to environment for statistical computing. The content of this very resume is written in R, using R Markdown, the {{vitae}} package, and some LaTeX typesetting.
 
 \footnotesize
 **Passionate about electronic music**
 \newline
-I have been playing the piano since I was 9 years old, albeit less frequently in the past few years. Moreover, between the ages of 15 and 22, I was active as a (electronic) music artist, producer, and event manager.
+I have been playing the piano since I was 9 years old, albeit much less frequently in the past few years. Moreover, between the ages of 15 and 22, I was active as an electronic music artist, producer, and event manager.
 
 **Fond of the sea**
 \newline
-As a teenager, I longed to spend my summer vacations at the seaside. From my 18th birthday onwards, after an intensive year of training, I was able to combine this fondness for the sea with a student job as a lifeguard at the Belgian coast.
+As a teenager, I longed to spend my summer vacations at the seaside. From my 18th birthday onwards, after an intensive year of training, I was able to combine this fondness for the sea with a student job as a lifeguard at the Belgian coast for 6 consecutive summers.
 
 \normalsize
