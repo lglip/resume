@@ -70,8 +70,8 @@ academia <- tribble(
   ~position, ~period, ~organisation, ~location, ~description,
   
   "Doctoral Researcher", "Aug. 2019 -- Present", "Ghent University", "Ghent, BE",
-    list("Research on topics in labour economics (90%), contributing to solving societal questions surrounding  the (Belgian) labour market",
-         "Teaching assignments (10%), including the guidance of last-year students regarding their master's thesis and guest lectures on economic research",
+    list("Research on topics in labour economics, contributing to solving societal questions surrounding the (Belgian) labour market",
+         "Teaching assignments, including guiding last-year students with their master's thesis, coaching bachelor students on migration research topics, and giving guest lectures on economic research",
          "Development of low-threshold, interactive, and flexible tools (e.g. multicultural situational judgment tests) to increase the awareness of HR professionals' intercultural competence and to empower them to deal with the drivers of their competence",
          "Dissertation: research on (ethnic) hiring discrimination, its determinants, its mechanisms, and the influence of the organisational context"),
   
@@ -277,6 +277,9 @@ In addition to conducting my own research, I have also reviewed the work of some
 ```{r societal outreach}
 outreach_s <- tribble(
   ~outlet, ~type, ~year, ~audience, ~topic, ~rows,
+  "UGent @ Work", "Story", "2022", "Belgian population",
+    "Well-being at work in Flanders (Belgium): New figures interpreted based on previous research", 1.9,
+  
   "UGent @ Work", "Blog post", "2022", "Belgian population",
     "Ethnic labour market discrimination: Generalisation or aversion?", 1.9,
   
@@ -373,7 +376,7 @@ outreach_a %>%
 general <- tribble(
    ~Research, ~Analytics, ~Business,
   "Audit studies -- Survey research -- Experimental research -- Applied psychometrics",
-  "Linear models -- (Ordered) logit models -- Meta-analysis -- Meta-regression -- Reliability and validity analysis -- Structural equation modeling",
+  "(Ordered) logit models -- Linear models -- Meta-analysis -- Meta-regression -- Reliability and validity analysis -- Structural equation modeling",
   "Project management -- Human capital management -- Corporate finance -- Consultancy"
 )
 
@@ -409,8 +412,8 @@ technical %>%
 languages <- tribble(
   ~Skill, ~Dutch, ~English, ~French,
   "Reading", "C2", "C2", "C1",
-  "Writing", "C2", "C2", "B2",
-  "Listening", "C2", "C2", "C1",
+  "Writing", "C2", "C2", "B1",
+  "Listening", "C2", "C2", "B2",
   "Speaking", "C2", "C1", "B1",
 )
 
