@@ -246,7 +246,7 @@ publications %>%
                 .protect = FALSE)
 ```
 
-\newpage
+\medskip
 ## Peer-reviewed Publications
 ```{r pr pubs}
 publications %>%
@@ -273,6 +273,48 @@ In addition to conducting my own research, I have also reviewed the work of some
 \normalsize
 
 \medskip
+## Academic Outreach
+```{r academic outreach}
+outreach_a <- tribble(
+  ~conference, ~year, ~location, ~topic,
+  "IMISCOE Annual Conference", "2022", "Oslo, NO",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
+  "Spring Meeting of Young Economists", "2022", "Orléans, FR",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
+  "CESSMIR PhD Meeting", "2021", "Ghent, BE",
+    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
+  
+  "EALE Annual Conference", "2021", "Barcelona, ES \\newline (online)",
+    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?",
+  
+  "Day of Sociology", "2021", "Utrecht, NL \\newline (online)",
+    "Taste-based discrimination: Actually a matter of contact avoidance?",
+  
+  "CESSMIR Research Day", "2021", "Ghent, BE",
+    "Taste-based discrimination: Actually a matter of contact avoidance?",
+  
+  "Faculty of Economics and Business Administration Research Day", "2021", "Ghent, BE",
+    "Loss aversion in taste-based employee discrimination: Evidence from a choice experiment",
+  
+  "Context Matters Symposium", "2020", "Brussels, BE",
+    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?"
+  )
+
+outreach_a %>%
+  brief_entries(
+    what = glue::glue("\\textbf{<conference>} \\newline <topic>",
+                      .open = "<", .close = ">"),
+    when = glue::glue("\\multirow{-1.9}{=}{<year>}",
+                      .open = "<", .close = ">"),
+    with = glue::glue("<location>",
+                      .open = "<", .close = ">"),
+    .protect = FALSE
+  )
+```
+
+\newpage
 ## Societal Outreach
 ```{r societal outreach}
 outreach_s <- tribble(
@@ -326,47 +368,7 @@ outreach_s %>%
   )
 ```
 
-\newpage
-## Academic Outreach
-```{r academic outreach}
-outreach_a <- tribble(
-  ~conference, ~year, ~location, ~topic,
-  "IMISCOE Annual Conference", "2022", "Oslo, NO",
-    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
-  
-  "Spring Meeting of Young Economists", "2022", "Orléans, FR",
-    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
-  
-  "CESSMIR PhD Meeting", "2021", "Ghent, BE",
-    "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
-  
-  "EALE Annual Conference", "2021", "Barcelona, ES \\newline (online)",
-    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?",
-  
-  "Day of Sociology", "2021", "Utrecht, NL \\newline (online)",
-    "Taste-based discrimination: Actually a matter of contact avoidance?",
-  
-  "CESSMIR Research Day", "2021", "Ghent, BE",
-    "Taste-based discrimination: Actually a matter of contact avoidance?",
-  
-  "Faculty of Economics and Business Administration Research Day", "2021", "Ghent, BE",
-    "Loss aversion in taste-based employee discrimination: Evidence from a choice experiment",
-  
-  "Context Matters Symposium", "2020", "Brussels, BE",
-    "Is labour market discrimination against ethnic minorities better explained by taste or statistics?"
-  )
-
-outreach_a %>%
-  brief_entries(
-    what = glue::glue("\\textbf{<conference>} \\newline <topic>",
-                      .open = "<", .close = ">"),
-    when = glue::glue("\\multirow{-1.9}{=}{<year>}",
-                      .open = "<", .close = ">"),
-    with = glue::glue("<location>",
-                      .open = "<", .close = ">"),
-    .protect = FALSE
-  )
-```
+\medskip
 
 # Skills
 
@@ -434,6 +436,7 @@ languages %>%
 #credits for this code chunk: https://github.com/loreabad6/
 ```
 
+\newpage
 # Certificates
 \medskip
 ```{r certificates}
