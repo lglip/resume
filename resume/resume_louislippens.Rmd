@@ -277,13 +277,16 @@ In addition to conducting my own research, I have also reviewed the work of some
 ```{r academic outreach}
 outreach_a <- tribble(
   ~conference, ~year, ~location, ~topic,
+  "CESSMIR Conference", "2022", "Ghent, BE",
+    "Understanding ethnic hiring discrimination: A contextual analysis of empirical evidence",
+  
   "IMISCOE Annual Conference", "2022", "Oslo, NO",
     "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
   
   "Spring Meeting of Young Economists", "2022", "Orléans, FR",
     "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
   
-  "CESSMIR PhD Meeting", "2021", "Ghent, BE",
+  "CESSMIR Conference", "2021", "Ghent, BE",
     "The state of hiring discrimination: A meta-analysis of (almost) all recent correspondence experiments",
   
   "EALE Annual Conference", "2021", "Barcelona, ES \\newline (online)",
@@ -319,6 +322,9 @@ outreach_a %>%
 ```{r societal outreach}
 outreach_s <- tribble(
   ~outlet, ~type, ~year, ~audience, ~topic, ~rows,
+  "UGent @ Work", "Blog post", "2022", "Belgian population",
+    "Measuring intentions to discriminate: in writing, open and exposed", 1.9,
+  
   "UGent @ Work", "Story", "2022", "Belgian population",
     "Well-being at work in Flanders (Belgium): New figures interpreted based on previous research", 1.9,
   
