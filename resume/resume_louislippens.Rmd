@@ -4,7 +4,7 @@ surname: Lippens
 position: Doctoral Researcher
 qualifications: MSc, MM
 address: Ghent University (FEB), Sint-Pietersplein 6, 9000 Gent, Belgium
-profilepic: llprofilesq2-bw.jpg
+profilepic: Louis_Anneke_sq_bw.jpg
 www: louislippens.be
 email: Louis.Lippens@UGent.be
 github: lglip
@@ -71,7 +71,7 @@ academia <- tribble(
   
   "Doctoral Researcher", "Aug. 2019 -- Present", "Ghent University", "Ghent, BE",
     list("Research on topics in labour economics, contributing to solving societal questions surrounding the (Belgian) labour market",
-         "Teaching assignments, including guiding last-year students with their master's thesis, coaching bachelor students on migration research topics, and giving guest lectures on economic research",
+         "Teaching assignments, such as guiding last-year students with their master's thesis, coaching bachelor students on migration research topics, and giving guest lectures on empirical/experimental economic research",
          "Development of low-threshold, interactive, and flexible tools (e.g. multicultural situational judgment tests) to increase the awareness of HR professionals' intercultural competence and to empower them to deal with the drivers of their competence",
          "Dissertation: research on (ethnic) hiring discrimination, its determinants, its mechanisms, and the influence of the organisational context"),
   
@@ -152,14 +152,14 @@ internships %>%
 socialsector <- tribble(
   ~position, ~period, ~organisation, ~location, ~description,
   
-  "HR Director", "Jul. 2015 -- Jun. 2016", "180 Degrees Consulting", "Ghent, BE",
-  list("180 Degrees Consulting (180DC) is the world's largest international consultancy for non-profits and social enterprises",
+  "Human Capital Director", "Jul. 2015 -- Jun. 2016", "180 Degrees Consulting (180DC)", "Ghent, BE",
+  list("180DC is the world's largest international consultancy for non-profits and social enterprises",
        "Led the human capital activities of 180DC's Ghent University branch",
        "Conducted selection tests, incl. reasoning tests and structured interviews, of about 70 university students",
        "Other activities: implementation of 180° feedback system, social media marketing, event support"),
   
   "Management Consultant", "Mar. 2015 -- Jun. 2015", "180 Degrees Consulting", "Ghent, BE",
-  list("Co-developed an integrated fundraising and marketing strategy for the NGO 'Join For Water'",
+  list("Co-developed an integrated fundraising and marketing strategy for the NGO Join For Water",
        "Conducted survey research regarding the brand perceptions of Join For Water's donors and sympathizers",
        "Developed an evidence-based, bespoke brand personality for Join For Water, as well as brand improvement guidelines")
 )
@@ -185,8 +185,7 @@ education <- tribble(
          "Supervisors: Prof. Stijn Baert, Prof. Eva Derous"),
   
   "PhD, Sociology", "Aug. 2019 -- Present", "Vrije Universiteit Brussel", "Brussels, BE",
-    list("Supervisor: Prof. Pieter-Paul Verhaeghe",
-         "Joint PhD with Ghent University as the main institution"),
+    list("Supervisor: Prof. Pieter-Paul Verhaeghe (Joint PhD with UGent as the main institution)"),
 
   "MM, General Management (Magna Cum Laude)", "Sep. 2016 -- Jun. 2017", "Vlerick Business School", "Ghent, BE",
     list("Key Courses: Corporate Finance, Financial Accounting, Management Accounting and Control, Strategic Management, Operations Management",
@@ -218,6 +217,18 @@ publications <- get_publications(profile_id, flush = TRUE, sortby = "year") %>%
 ```
 
 \medskip
+## Peer-reviewed Publications
+```{r pr pubs}
+publications %>%
+  filter(journal %!in% c("IZA Discussion Paper", "Ghent University")) %>%
+  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
+                                  .open = "<", .close = ">"),
+                when = glue::glue("\\multirow{-2.75}{=}{<year>}",
+                                  .open = "<", .close = ">"),
+                .protect = FALSE)
+```
+
+\medskip
 ## Technical Reports
 ```{r tech reports}
 publications %>%
@@ -246,30 +257,16 @@ publications %>%
                 .protect = FALSE)
 ```
 
-\medskip
-## Peer-reviewed Publications
-```{r pr pubs}
-publications %>%
-  filter(journal %!in% c("IZA Discussion Paper", "Ghent University")) %>%
-  brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
-                                  .open = "<", .close = ">"),
-                when = glue::glue("\\multirow{-2.75}{=}{<year>}",
-                                  .open = "<", .close = ">"),
-                .protect = FALSE)
-```
-
-
 \scriptsize
 Visit my Google Scholar profile at https://bit.ly/louis-lippens-scholar for a comprehensive overview of my research.
 \normalsize
-
 
 # Services and Outreach
 
 \medskip
 ## Peer Reviews
 \footnotesize
-In addition to conducting my own research, I have also reviewed the work of some of my peers. I have served as a reviewer (ad hoc) for the **Journal of Labor Economics** (1), **Work and Occupations** (1), **Social Science & Medicine** (1), **Social Forces** (1), **Journal of Sociology** (1) **PLOS ONE** (2), **International Migration Review** (1), **Social Policy and Society** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
+In addition to conducting my own research, I have also reviewed the work of some of my peers. I have served as a reviewer (ad hoc) for the **Journal of Labor Economics** (1), **Technology in Society** (1), **Journal of Ethnic and Migration Studies** (1), **Social Science & Medicine** (1), **Social Forces** (1), **PLOS ONE** (2), **Journal of Sociology** (1), **Work and Occupations** (1), **Social Policy and Society** (1), **International Migration Review** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
 \normalsize
 
 \medskip
@@ -325,20 +322,11 @@ outreach_s <- tribble(
   "UGent @ Work", "Blog post", "2022", "Belgian population",
     "Measuring intentions to discriminate: in writing, open and exposed", 1.9,
   
-  "UGent @ Work", "Story", "2022", "Belgian population",
-    "Well-being at work in Flanders (Belgium): New figures interpreted based on previous research", 1.9,
-  
   "UGent @ Work", "Blog post", "2022", "Belgian population",
     "Ethnic labour market discrimination: Generalisation or aversion?", 1.9,
   
   "HR Magazine", "Magazine article", "2022", "HR professionals",
-    "Structured interview best predicts a good match", 1.9,
-  
-  "UGent @ Work", "Story", "2022", "Belgian population",
-    "Inactivity among migrants in Belgium", 1.9,
-  
-  "UGent @ Work", "Story", "2022", "Belgian population",
-    "Inactivity in Europe and the Belgian Regions", 1.9,
+    "The structured interview best predicts a good match", 1.9,
   
   "LinkedIn", "Blog post", "2022", "HR professionals",
     "The top-ranked selection tools to hire the best-performing candidate", 1.9,
