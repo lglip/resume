@@ -39,7 +39,7 @@ library(scholar)
 # About Me
 
 \footnotesize
-I am a **postdoctoral researcher** in **labour economics** at Ghent University. My academic work focuses on the determinants and contextual factors contributing to hiring discrimination. My **postdoctoral project** delves into the relationship between **competition** and **hiring discrimination**. More broadly, as an affiliated researcher at UGent @ Work, I collaborate on **interdisciplinary projects** addressing key challenges in the **labour market**, translating research results into **evidence-based policy advice**. I hold a **master’s degree** in **work psychology** from Ghent University and a business degree in **general management** from Vlerick Business School. Prior to re-entering academia and obtaining a **joint PhD in economics and sociology** from Ghent University and Free University Brussels, I worked in management consulting, where I gained experience in data governance and data analytics.
+I am a **postdoctoral researcher** in **labour economics** at Ghent University. My academic work focuses on what determines and solves labour market discrimination. My **postdoctoral project** delves into the relationship between **competition** and **discrimination**. More broadly, as an affiliated researcher at **UGent @ Work**, I collaborate on **interdisciplinary projects** addressing key challenges in the **labour market**, translating research results into **evidence-based policy advice**. I hold a **master’s degree** in **work psychology** from Ghent University and a business degree in **general management** from Vlerick Business School. Prior to re-entering academia and obtaining a **joint PhD in economics and sociology** from Ghent University and Free University Brussels, I worked in management consulting, where I gained experience in data governance and data analytics.
 \normalsize
 
 ```{r}
@@ -187,7 +187,7 @@ education <- tribble(
   
   "PhD, Economics", "Aug. 2019 -- Aug. 2023", "Ghent University", "Ghent, BE",
   list("Doctoral courses: Advanced Econometrics (Non-Linear Techniques), Advanced Labour Economics, Multilevel Analysis",
-       "Other courses: Advanced Academic Writing in English, Multilevel Analysis in R, Generalised Linear Models in R, Multidisciplinary Research Tools to Study Work and the Labour Market, Effective Graphical Displays",
+       "Other courses: Econometrics, Labour Economics, Advanced Academic Writing in English, Multilevel Analysis in R, Generalised Linear Models in R, Multidisciplinary Research Tools to Study Work and the Labour Market, Effective Graphical Displays",
        "Supervisors: Prof. Stijn Baert, Prof. Eva Derous"),
   
   "PhD, Sociology", "Aug. 2019 -- Aug. 2023", "Free University Brussels", "Brussels, BE",
@@ -272,15 +272,15 @@ publications %>%
                 .protect = FALSE)
 ```
 
-\medskip
-## Conference Papers
 ```{r conf pubs}
+#\medskip
+## Conference Papers
 wp <- tribble(
   ~journal, ~title, ~author, ~year,
   "17th Belgian Day for Labour Economists", "Understanding ethnic hiring discrimination: A contextual analysis of experimental evidence", "L Lippens, A Dalle, F D'hondt, PP Verhaeghe, S Baert", "2022"
 )
 
-wp %>%
+stop <- wp %>%
   as.data.frame() %>%
   brief_entries(what = glue::glue("\\textbf{<journal>} \\newline <title> \\newline <author>",
                                   .open = "<", .close = ">"),
@@ -296,7 +296,7 @@ Visit my Google Scholar profile at https://bit.ly/louis-lippens-scholar for a co
 # Services and Outreach
 
 \medskip
-## Peer Reviews
+## Peer Review
 \footnotesize
 In addition to conducting my own research, I have also reviewed the work of some of my peers. I have served as a reviewer (ad hoc) for **American Sociological Review** (1), **Journal of Labor Economics** (1), **Technology in Society** (1), **Journal of Ethnic and Migration Studies** (1), **Social Science & Medicine** (1), **Social Forces** (1), **PLOS ONE** (2), **Journal of Sociology** (1), **Work and Occupations** (1), **Social Policy and Society** (1), **International Migration Review** (1), **The Annals of Regional Science** (1), **Oxford Bulletin of Economics and Statistics** (1), **International Journal of Manpower** (1), and **Economics Bulletin** (2).
 \normalsize
@@ -526,12 +526,12 @@ certificates <- tribble(
 #)
 ```
 
-# Honors and Awards
+# Honors, Grants, and Awards
 \medskip
 ```{r awards}
 awards <- tribble(
   ~award, ~year, ~institution, ~description, ~rows,
-  "Junior Postdoctoral Fellowship", "2023", "FWO Research Foundation -- Flanders",
+  "FWO Junior Postdoctoral Fellowship", "2023", "FWO Research Foundation -- Flanders",
   "Following (international) peer review of my postdoctoral project on competition and discrimination, I was awarded a three-year postdoctoral fellowship starting October 2023 (award rate: 21.2\\%).", 3,
   
   "Student Achievement for Outstanding Performance", "2017", "Vlerick Business School",
